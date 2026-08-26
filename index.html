@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luerbio 60: Grafos, Complexidade e Algoritmos</title>
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo-container img {
+            max-height: 400px;
+        }
+        
+        /* Menu Horizontal */
+        nav {
+            background-color: #34495e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0; 
+            z-index: 100;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #f1c40f; 
+        }
+
+        /* Foto do Professor e Destaque */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background-color: white;
+        }
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2c3e50;
+        }
+        
+        /* Contêiner principal para o conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        
+        /* Caixa de Informações (Data e Local) */
+        .info-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 5px solid #2c3e50;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Tabela de Programação */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top; /* Mantém o texto alinhado no topo da célula */
+        }
+        th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        /* Estilos para os Palestrantes na Tabela */
+        .speaker-info {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .speaker-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #34495e;
+            flex-shrink: 0;
+        }
+        .speaker-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .speaker-name {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+        .talk-title {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+        .talk-description {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Galeria de Fotos */
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo do Evento Luerbio 60">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre o evento</a></li>
+            <li><a href="#fotos">Fotos</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="luerbio.png" alt="Foto do Prof. Luerbio">
+    </div>
+
+    <div class="container">
+        
+        <h2 id="sobre">Sobre o Evento</h2>
+        <p>
+            O workshop <strong>Luerbio 60: Grafos, Complexidade e Algoritmos</strong> é um evento especial de um dia dedicado a celebrar a trajetória brilhante do Professor Luerbio. 
+            Junte-se a nós para uma tarde de ciência, conexões e homenagens, reunindo amigos, alunos e pesquisadores para discutir temas que marcam a sua carreira e brindar aos seus 60 anos de vida e dedicação à área.
+        </p>
+
+        <div class="info-box">
+            <strong>Data:</strong> 26 de outubro de 2026, às 13h<br>
+            <strong>Local:</strong> RAV 62 - Universidade do Estado do Rio de Janeiro (UERJ)
+        </div>
+
+        <h2>Programação</h2>
+        <table>
+            <tr>
+                <th style="width: 15%;">Horário</th>
+                <th>Atividade</th>
+            </tr>
+            
+            <!-- Palestra 1 -->
+            <tr>
+                <td><strong>13:00</strong></td>
+                <td>
+                    <div class="speaker-info">
+                        <img src="palestrante1.jpg" alt="Foto Palestrante 1" class="speaker-photo">
+                        <div class="speaker-details">
+                            <p class="speaker-name">Nome do Palestrante 1</p>
+                            <p class="talk-title">"Título da Palestra"</p>
+                            <p class="talk-description">Breve descrição sobre o tema que será abordado, os conceitos principais de grafos ou algoritmos que serão discutidos nesta sessão.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Palestra 2 -->
+            <tr>
+                <td><strong>14:00</strong></td>
+                <td>
+                    <div class="speaker-info">
+                        <img src="palestrante2.jpg" alt="Foto Palestrante 2" class="speaker-photo">
+                        <div class="speaker-details">
+                            <p class="speaker-name">Nome do Palestrante 2</p>
+                            <p class="talk-title">"Título da Palestra"</p>
+                            <p class="talk-description">Breve descrição sobre o tema que será abordado, destacando a complexidade computacional e aplicações.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td><strong>15:00</strong></td>
+                <td><strong>Homenagem ao Luerbio 60</strong></td>
+            </tr>
+            <tr>
+                <td><strong>15:30</strong></td>
+                <td>Coffee Break</td>
+            </tr>
+            <tr>
+                <td><strong>16:00</strong></td>
+                <td>Encerramento</td>
+            </tr>
+        </table>
+
+        <h2 id="fotos">Galeria de Fotos</h2>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Galeria 1">
+            <img src="foto2.jpg" alt="Galeria 2">
+            <img src="foto3.jpg" alt="Galeria 3">
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Organização:</strong> Mauro Nigro e Diana Sasaki</p>
+        <p>Rio de Janeiro, 26 de Outubro de 2026</p>
+    </footer>
+
+</body>
+</html>
